@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>india demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href=".syles/style.css" />
-  </head>
-  <body>
-    <!-- partial:index.partial.html -->
-    <nav>Title, links to REPO, link to Nu!</nav>
 
-    <button id="loadData" class="btn btn-secondary">
-      Load my Profile Info
-    </button>
+<head>
+  <meta charset="UTF-8" />
+  <title>India Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href=".syles/style.css" />
+</head>
 
+<body>
+
+  <nav>India Hotel Service <br>
+    <a href="https://github.com/astricklandd/fluffy-india-hotel" target="_blank">Check out the Code!</a> <br>
+    Link to Nu!
+  </nav>
+
+  <button id="loadData" class="btn btn-secondary">
+    Load Profile Info
+  </button>
+  <form name="form">
     <div class="row">
       <div class="col-md-6 offset-md-3 card mt-3">
         <h3 class="card-title">Give me your data!</h3>
-        <form>
+
+        <div class="mb-2 mt-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" />
+        </div>
           <div class="mb-3 mt-3">
             <label for="email" class="form-label">Email:</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Enter email"
-              name="email"
-            />
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
           </div>
           <div class="mb-3">
             <label for="pwd" class="form-label">Password:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="pwd"
-              placeholder="Enter password"
-              name="pswd"
-            />
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" />
           </div>
           <div class="form-check mb-3">
             <label class="form-check-label">
@@ -54,43 +45,101 @@
           </div>
 
           <div class="form-check">
-            <input
-              type="radio"
-              class="form-check-input"
-              id="radio1"
-              name="optradio"
-              value="A"
-            />A-words
+            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="A" />A-words
             <label class="form-check-label" for="radio1"></label>
           </div>
           <div class="form-check">
-            <input
-              type="radio"
-              class="form-check-input"
-              id="radio2"
-              name="optradio"
-              value="B"
-            />B-words
+            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="B" />B-words
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="radio3" name="optradio" value="C" />C-words
             <label class="form-check-label" for="radio2"></label>
           </div>
 
-          <select
-            id="letterWordsSelect"
-            class="form-select"
-            aria-label="Default select example"
-          >
-            <option selected disabled>Pick A or B above</option>
+          <select id="letterWordsSelect" class="form-select" aria-label="Default select example">
+            <option selected disabled>Pick A, B, C above</option>
           </select>
+          <table>
+            <th class="row1">Favorite Holiday</th>
+            <tr>
+              <td class="col1">
+                <select name="holiday" id="holiday">
+                  <option value="Easter">Easter</option>
+                  <option value="America">4th of July</option>
+                  <option value="Halloween">Halloween</option>
+                  <option value="Thanksgiving">Thanksgiving</option>
+                  <option value="Christmas">Christmas</option>
+                  <option value="Other">Other</option>
+                </select>
+              </td>
+            </tr>
+          </table> <br>
 
-          <button id="submitForm" type="submit" class="btn btn-primary">
+
+          <button id="submitForm" type="submit" class="btn btn-primary" onclick="display()">
             Submit
           </button>
-        </form>
+        
       </div>
     </div>
-    <!-- partial -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="scripts/script.js"></script>
-  </body>
+    </form>
+    
+    <center><table cellpadding="10" cellspacing="2">
+      <tr style="background-color: rgb(8, 8, 103); color:white">
+        <td align="center"><div><b>Name</b></div></td>
+        <td align="center"><div><b>Username</b></div></td>
+        <td align="center"><div><b>Password</b></div></td>
+        <td align="center"><div><b> Holiday</b></div></td>
+        </tr> 
+
+        <tr style="background-color: purple; color:white"> 
+        <td><div id="displayarea"></div></td>
+        <td ><div id="displayarea1"></div></td>
+        <td ><div id="displayarea2"></div></td>
+        <td><div id="displayarea3"></div></td>
+        </tr>
+
+    </table></center>
+    <center>
+      <table>
+      <tr>
+        <td>
+            <button type="reset" class="reset" onclick="resetProjectDetails()">Clear</button>
+        </td>
+    </tr>
+    </table></center>
+   <center>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+    <ul id="myUL">
+      <li><a href="https://en.wikipedia.org/wiki/A" target="_blank">Adele</a></li>
+      <li><a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.mOuT5J0qeP_FHAidCHCvtwHaEK%26pid%3DApi&f=1&ipt=58540eb3e456510e90255ef4a224f70eaf8906801c1372a9208a049fbf8bd029&ipo=images" target="_blank">Agnes</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/A" target="_blank">Alex</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/B" target="_blank">Barry</a></li>
+      <li><a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.LE2tYR-j0604P35dRM70ZwHaE7%26pid%3DApi&f=1&ipt=d3e43b5eb2d9d8e75c35872bec62b9e6ee0f39025b15fee86619586d7da995a9&ipo=images" target="_blank">Billy</a></li>
+      <li><a href="https://www.youtube.com/watch?v=RoFz9V_BEG4" target="_blank">Bishop</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/B" target="_blank">Bob</a></li>
+    
+      <li><a href="https://en.wikipedia.org/wiki/C" target="_blank">Calvin</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">Christina</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/C_(musical_note)" target="_blank">Cindy</a></li>
+      <li><a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.XDK-26izs83ofgG4rjuQRAHaEW%26pid%3DApi&f=1&ipt=d93d11a886352fb419276ec7af7b5f800be857aab9f4c37ed9e2414e32a3b512&ipo=images" target="_blank">Cumbie</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/C_(TV_series)" target="_blank">Crabtree</a></li>
+
+      <li><a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.rbrbDZYuxnJCzb8HFVgcKAAAAA%26pid%3DApi&f=1&ipt=9c64a103dce868c6175f4b24646eaabec2630bc3bc864a46efc641c1f0ea96f0&ipo=images" target="_blank">President Kits</a></li>
+      
+      <li><a href="https://en.wikipedia.org/wiki/Thanos" target="_blank">Thanos</a></li>
+      <li><a href="https://www.imdb.com/list/ls068942825/" target="_blank">Superman</a></li>
+    
+    </ul></center>
+
+    
+</body>
+
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+
 </html>

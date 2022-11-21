@@ -3,7 +3,9 @@ $(function () {
 
   let userData = ["barry", "somethinglese"];
   let userJSON = {
-    email: "barry email address",
+    email: "defaultEmail@una.edu",
+    name: "First Last",
+    pwd: "helloWorld123",
   };
 
   $("#loadData").click(() => {
@@ -13,8 +15,6 @@ $(function () {
   });
 
   $("input[type=radio]").on("change", function () {
-    // var $this = $(this);
-    // if ($this.is(":checked")) alert("a");
 
     // call a function... to do all this stuff:
 
@@ -39,15 +39,14 @@ $(function () {
 
     // get data from an input
 
-    let dataStuff = `{ "letterSelected:" " ${$(
+    let dataStuff = `{ "letterSelected:  ${$(
       "input[type=radio]:checked"
     ).val()} " }`;
-
     // display data from that input
 
     console.log(dataStuff);
-
-    // do that suff 2x
+    alert(dataStuff);
+    
   });
 });
 
@@ -68,5 +67,56 @@ function getWords(letter) {
     return cWordArray;
   } else {
     return ["please select a letter"];
+  }
+}
+function display()
+{
+document.getElementById("displayarea4").innerHTML = document.getElementById('name').value; 
+document.getElementById("holiday").value = "";
+
+document.getElementById("displayarea3").innerHTML = document.getElementById('holiday').value; 
+document.getElementById("holiday").value = "";
+
+document.getElementById("displayarea2").innerHTML = document.getElementById("pwd").value; 
+document.getElementById("pwd").value = "";
+
+document.getElementById("displayarea1").innerHTML = document.getElementById("email").value; 
+document.getElementById("email").value = "";
+
+document.getElementById("displayarea").innerHTML = document.getElementById("name").value; 
+document.getElementById("name").value = "";
+}
+
+function resetProjectDetails() {
+  document.getElementById("displayarea3").innerHTML = '';
+document.getElementById("holiday").value = "";
+
+document.getElementById("displayarea2").innerHTML = '';
+document.getElementById("pwd").value = "";
+
+document.getElementById("displayarea1").innerHTML = '';
+document.getElementById("email").value = "";
+
+document.getElementById("displayarea").innerHTML = '';
+document.getElementById("name").value = "";
+}
+
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
   }
 }
