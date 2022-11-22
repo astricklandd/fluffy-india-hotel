@@ -71,8 +71,6 @@ function getWords(letter) {
 }
 function display()
 {
-document.getElementById("displayarea4").innerHTML = document.getElementById('name').value; 
-document.getElementById("holiday").value = "";
 
 document.getElementById("displayarea3").innerHTML = document.getElementById('holiday').value; 
 document.getElementById("holiday").value = "";

@@ -1,4 +1,7 @@
 /* styles go here */
+body {
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.QNk-XWKcNDVL1rvFxaYdmAHaEK%26pid%3DApi&f=1&ipt=1f1ee8c7002d81aed23aa33bc65a691d1a3392c40e96934a4a75b9f740db8118&ipo=images');
+}
 #myInput {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
   background-position: 10px 12px; /* Position the search icon */
@@ -33,5 +36,5 @@
 
 #myUL li a:hover:not(.header) {
   background-color: #eee; /* Add a hover effect to all links, except for headers */
-  
+
 }
